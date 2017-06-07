@@ -8,6 +8,7 @@ pipeline {
             }
         }
     stage('Test'){
+      steps {
       parallel (
         "JUnit": { 
             sh "echo JUnit"
@@ -19,6 +20,7 @@ pipeline {
             sh "echo Jasmine"
         },
       )
+    }
     }
         stage('Deploy') {
             steps {
