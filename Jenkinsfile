@@ -8,9 +8,6 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
             parallel (
               "JUnit": { 
                  sh "echo JUnit"
